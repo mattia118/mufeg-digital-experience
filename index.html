@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUFEG - Museo di Comunità della Festa del Grano</title>
+    <title>MUFEG - Museo della Festa del Grano</title>
     <style>
         /* TAVOLO DEI COLORI A TEMA GRANO */
         :root {
@@ -22,23 +22,14 @@
             line-height: 1.6;
         }
 
-        /* 1. PAGINA INIZIALE (HERO) */
+        /* 1. PAGINA INIZIALE (HERO) - SENZA TESTO HTML */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1542711874-972740924195?q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
+            height: 100vh; /* Grande quanto tutto lo schermo */
+            background-image: url('sfondo-mufeg.jpg'); /* Carica la TUA immagine */
+            background-size: cover; /* L'immagine copre tutto senza distorcersi */
+            background-position: center; /* Il centro dell'immagine è sempre visibile */
+            background-repeat: no-repeat;
         }
-
-        .hero h1 { font-size: clamp(3.5rem, 10vw, 6rem); margin: 0; letter-spacing: 5px; }
-        .hero p { font-size: 1.5rem; font-weight: 300; font-style: italic; opacity: 0.9; }
 
         /* 2. SEZIONE CHI SIAMO / COSA FACCIAMO */
         .about-section {
@@ -67,28 +58,17 @@
         }
         .text-box p { font-size: 1.1rem; text-align: justify; }
 
-        .image-box { 
-            flex: 1; 
-            min-width: 300px; 
-            padding: 20px; 
-            text-align: center;
-        }
+        .image-box { flex: 1; min-width: 300px; padding: 20px; text-align: center; }
 
         .image-box img {
             width: 100%;
             height: 400px;
             object-fit: cover;
             border-radius: 10px;
-            box-shadow: 15px 15px 0px var(--oro-grano); /* Effetto decorativo */
+            box-shadow: 15px 15px 0px var(--oro-grano);
         }
 
-        /* DECORAZIONE DIVISORE */
-        .divider {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 2rem;
-            color: var(--oro-grano);
-        }
+        .divider { text-align: center; margin: 40px 0; font-size: 2rem; color: var(--oro-grano); }
 
         footer {
             background: var(--terra);
@@ -100,10 +80,7 @@
 </head>
 <body>
 
-    <section class="hero">
-        <h1>MUFEG</h1>
-        <p>L'oro di Jelsi: Arte, Devozione, Comunità</p>
-    </section>
+    <section class="hero"></section>
 
     <section class="about-section">
         
@@ -111,10 +88,7 @@
             <div class="text-box">
                 <h2>Chi Siamo</h2>
                 <p>
-                    Il <strong>MUFEG</strong> non è solo un museo, è il cuore pulsante di Jelsi. 
-                    Nato per custodire l'eredità della Festa del Grano, siamo una comunità che tramanda 
-                    da generazioni l'arte millenaria dell'intreccio della paglia. 
-                    Qui, la storia del terremoto del 1805 si trasforma in un inno alla vita e alla gratitudine.
+                    Il <strong>MUFEG</strong> è il cuore pulsante di Jelsi. Nato per custodire l'eredità della Festa del Grano, siamo una comunità che tramanda da generazioni l'arte millenaria dell'intreccio della paglia. Qui, la storia del terremoto del 1805 si trasforma in un inno alla vita e alla gratitudine.
                 </p>
             </div>
             <div class="image-box">
@@ -128,9 +102,7 @@
             <div class="text-box">
                 <h2>Cosa Facciamo</h2>
                 <p>
-                    Preserviamo le <strong>Traglie</strong> e i carri allegorici, opere d'arte effimere fatte interamente di spighe. 
-                    Organizziamo laboratori di intreccio, percorsi didattici e utilizziamo le tecnologie digitali più avanzate 
-                    per far sì che queste sculture dorate non svaniscano mai. Portiamo nel futuro un rito che unisce sacro e profano.
+                    Preserviamo le <strong>Traglie</strong>, opere d'arte effimere fatte di spighe. Organizziamo laboratori di intreccio, percorsi didattici e utilizziamo le tecnologie digitali per far sì che queste sculture dorate non svaniscano mai, portando nel futuro un rito che unisce sacro e profano.
                 </p>
             </div>
             <div class="image-box">
@@ -141,7 +113,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 MUFEG Jelsi - Progetto di Valorizzazione Digitale</p>
+        <p>&copy; 2024 MUFEG Jelsi - Progetto Digitale</p>
     </footer>
 
 </body>
