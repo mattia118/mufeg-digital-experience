@@ -3,132 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUFEG - Experience Digitale</title>
+    <title>MUFEG - Museo di Comunità della Festa del Grano</title>
     <style>
+        /* TAVOLO DEI COLORI A TEMA GRANO */
         :root {
-            --oro-grano: #daa520;
-            --marrone-scuro: #3e2723;
-            --crema: #fffdf5;
-            --nero-testo: #2c1e1a;
+            --oro-grano: #e3b448;
+            --paglia: #f4ece0;
+            --terra: #3e2723;
+            --crema-chiaro: #fffdfa;
         }
 
-        body, html { margin: 0; padding: 0; font-family: 'Georgia', serif; background: var(--crema); color: var(--nero-testo); scroll-behavior: smooth; }
+        body, html { 
+            margin: 0; padding: 0; 
+            font-family: 'Georgia', serif; 
+            background-color: var(--crema-chiaro); 
+            color: var(--terra); 
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
 
-        /* Hero Section */
-        header {
+        /* 1. PAGINA INIZIALE (HERO) */
+        .hero {
             height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070');
-            background-size: cover; background-position: center;
-            color: white; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1542711874-972740924195?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
         }
-        header h1 { font-size: clamp(3rem, 10vw, 5rem); margin: 0; }
-        header p { font-size: 1.5rem; font-style: italic; }
 
-        /* Sezione Storytelling */
-        .story-section { padding: 80px 20px; max-width: 900px; margin: auto; line-height: 1.8; }
-        .story-item { display: flex; flex-direction: column; margin-bottom: 100px; align-items: center; text-align: center; }
-        .story-item img { width: 100%; max-width: 600px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 20px 0; }
-        .year { font-size: 3rem; font-weight: bold; color: var(--oro-grano); font-family: sans-serif; display: block; }
-        h2 { font-size: 2.5rem; color: var(--marrone-scuro); }
+        .hero h1 { font-size: clamp(3.5rem, 10vw, 6rem); margin: 0; letter-spacing: 5px; }
+        .hero p { font-size: 1.5rem; font-weight: 300; font-style: italic; opacity: 0.9; }
 
-        /* Canvas 3D */
-        #interactive-3d { height: 70vh; background: #e0e0e0; position: relative; border-top: 10px solid var(--oro-grano); }
-        #ui-overlay { position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.9); padding: 15px; border-radius: 8px; pointer-events: none; }
+        /* 2. SEZIONE CHI SIAMO / COSA FACCIAMO */
+        .about-section {
+            padding: 100px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-        footer { padding: 40px; text-align: center; background: var(--marrone-scuro); color: white; }
+        .content-block {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 80px;
+        }
+
+        .content-block:nth-child(even) { flex-direction: row-reverse; }
+
+        .text-box { flex: 1; min-width: 300px; padding: 20px; }
+        .text-box h2 { 
+            font-size: 2.5rem; 
+            color: var(--oro-grano); 
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--oro-grano);
+            display: inline-block;
+        }
+        .text-box p { font-size: 1.1rem; text-align: justify; }
+
+        .image-box { 
+            flex: 1; 
+            min-width: 300px; 
+            padding: 20px; 
+            text-align: center;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 15px 15px 0px var(--oro-grano); /* Effetto decorativo */
+        }
+
+        /* DECORAZIONE DIVISORE */
+        .divider {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2rem;
+            color: var(--oro-grano);
+        }
+
+        footer {
+            background: var(--terra);
+            color: var(--paglia);
+            text-align: center;
+            padding: 30px;
+        }
     </style>
 </head>
 <body>
 
-    <header>
+    <section class="hero">
         <h1>MUFEG</h1>
-        <p>L'Anima di Paglia di Jelsi</p>
-    </header>
+        <p>L'oro di Jelsi: Arte, Devozione, Comunità</p>
+    </section>
 
-    <div class="story-section">
+    <section class="about-section">
         
-        <div class="story-item">
-            <span class="year">1805</span>
-            <h2>Il Miracolo dopo il Terremoto</h2>
-            <p>Il 26 luglio 1805, un violento terremoto scosse il Molise. Jelsi rimase miracolosamente quasi intatta. Gli abitanti, per ringraziare Sant'Anna, iniziarono a offrire il bene più prezioso della loro terra: il grano. Nacque così la prima sfilata delle Traglie.</p>
-            <img src="https://images.unsplash.com/photo-1516483642774-724321777ba8?q=80&w=1000" alt="Storia antica">
+        <div class="content-block">
+            <div class="text-box">
+                <h2>Chi Siamo</h2>
+                <p>
+                    Il <strong>MUFEG</strong> non è solo un museo, è il cuore pulsante di Jelsi. 
+                    Nato per custodire l'eredità della Festa del Grano, siamo una comunità che tramanda 
+                    da generazioni l'arte millenaria dell'intreccio della paglia. 
+                    Qui, la storia del terremoto del 1805 si trasforma in un inno alla vita e alla gratitudine.
+                </p>
+            </div>
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1000" alt="Lavoro del grano">
+            </div>
         </div>
 
-        <div class="story-item">
-            <span class="year">1900s</span>
-            <h2>L'Arte dell'Intreccio</h2>
-            <p>Col passare dei decenni, la semplice offerta si trasformò in arte. Le spighe non venivano solo caricate, ma intrecciate a mano per creare forme geometriche, architetture e scene di vita contadina. Ogni chicco diventava un pixel di un mosaico dorato.</p>
-            <img src="https://images.unsplash.com/photo-1474130044500-112f41655f01?q=80&w=1000" alt="Grano intrecciato">
+        <div class="divider">🌾🌾🌾</div>
+
+        <div class="content-block">
+            <div class="text-box">
+                <h2>Cosa Facciamo</h2>
+                <p>
+                    Preserviamo le <strong>Traglie</strong> e i carri allegorici, opere d'arte effimere fatte interamente di spighe. 
+                    Organizziamo laboratori di intreccio, percorsi didattici e utilizziamo le tecnologie digitali più avanzate 
+                    per far sì che queste sculture dorate non svaniscano mai. Portiamo nel futuro un rito che unisce sacro e profano.
+                </p>
+            </div>
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1474130044500-112f41655f01?q=80&w=1000" alt="Dettaglio intreccio">
+            </div>
         </div>
 
-        <div class="story-item">
-            <span class="year">Oggi</span>
-            <h2>Il MUFEG: Un Patrimonio Digitale</h2>
-            <p>Oggi il Museo di Comunità (MUFEG) custodisce queste fragili opere. Qui la tradizione incontra l'innovazione: le Traglie vengono digitalizzate per essere conservate per l'eternità, permettendo al mondo di scoprire il segreto dell'oro di Jelsi.</p>
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000" alt="Museo moderno">
-        </div>
-
-    </div>
-
-    <section id="interactive-3d">
-        <div id="ui-overlay">
-            <h3>Archivio Digitale 3D</h3>
-            <p>Esplora la struttura di una Traglia tradizionale.</p>
-        </div>
     </section>
 
     <footer>
-        <p>Jelsi - Festa del Grano | Sito in fase di sviluppo</p>
+        <p>&copy; 2024 MUFEG Jelsi - Progetto di Valorizzazione Digitale</p>
     </footer>
 
-    <script type="importmap">
-        { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/" } }
-    </script>
-
-    <script type="module">
-        import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
-        const container = document.getElementById('interactive-3d');
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0xf4f4f4);
-
-        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        container.appendChild(renderer.domElement);
-
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-
-        const light = new THREE.DirectionalLight(0xffffff, 1);
-        light.position.set(5, 5, 5);
-        scene.add(light);
-        scene.add(new THREE.AmbientLight(0xffffff, 0.5));
-
-        // Rappresentazione simbolica Traglia
-        const base = new THREE.Mesh(new THREE.BoxGeometry(4, 0.3, 2), new THREE.MeshStandardMaterial({ color: 0x5d4037 }));
-        scene.add(base);
-
-        const grain = new THREE.Mesh(new THREE.ConeGeometry(1.2, 3, 32), new THREE.MeshStandardMaterial({ color: 0xdaa520 }));
-        grain.position.y = 1.6;
-        scene.add(grain);
-
-        camera.position.set(6, 4, 6);
-
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update();
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-        });
-    </script>
 </body>
 </html>
