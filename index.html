@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MUFEG 3D Experience</title>
+    <style>
+        body { margin: 0; background-color: #fdf5e6; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+        #info { position: absolute; top: 20px; width: 100%; text-align: center; color: #5d4037; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h1>Museo del Grano - Jelsi</h1>
+        <p>In attesa del modello 3D della Traglia...</p>
+    </div>
+
+    <script type="importmap">
+        { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // 1. Scena e Camera
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 2. Creiamo una forma temporanea (un "cubo di grano")
+        const geometry = new THREE.BoxGeometry(2, 2, 2);
+        const material = new THREE.MeshStandardMaterial({ color: 0xdaa520 }); // Color oro grano
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        // 3. Luce
+        const light = new THREE.PointLight(0xffffff, 50);
+        light.position.set(5, 5, 5);
+        scene.add(light);
+        scene.add(new THREE.AmbientLight(0x404040));
+
+        camera.position.z = 5;
+
+        // 4. Animazione
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
