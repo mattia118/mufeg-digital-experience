@@ -22,13 +22,17 @@
             line-height: 1.6;
         }
 
-        /* 1. PAGINA INIZIALE (HERO) - SENZA TESTO HTML */
+        /* 1. PAGINA INIZIALE (HERO) */
         .hero {
-            height: 100vh; /* Grande quanto tutto lo schermo */
-            background-image: url('sfondo-mufeg.jpg'); /* Carica la TUA immagine */
-            background-size: cover; /* L'immagine copre tutto senza distorcersi */
-            background-position: center; /* Il centro dell'immagine è sempre visibile */
+            height: 100vh;
+            background-color: var(--paglia); /* Colore di backup */
+            background-image: url('sfondo-mufeg.png'); /* ESTENSIONE CORRETTA */
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* 2. SEZIONE CHI SIAMO / COSA FACCIAMO */
@@ -74,7 +78,8 @@
             background: var(--terra);
             color: var(--paglia);
             text-align: center;
-            padding: 30px;
+            padding: 40px;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -88,11 +93,11 @@
             <div class="text-box">
                 <h2>Chi Siamo</h2>
                 <p>
-                    Il <strong>MUFEG</strong> è il cuore pulsante di Jelsi. Nato per custodire l'eredità della Festa del Grano, siamo una comunità che tramanda da generazioni l'arte millenaria dell'intreccio della paglia. Qui, la storia del terremoto del 1805 si trasforma in un inno alla vita e alla gratitudine.
+                    Il <strong>MUFEG</strong> è il cuore pulsante di Jelsi. Nato per custodire l'eredità della Festa del Grano, siamo una comunità che tramanda da generazioni l'arte millenaria dell'intreccio della paglia. Qui, la storia del terremoto del 1805 si trasforma in un inno alla vita e alla gratitudine di un intero popolo.
                 </p>
             </div>
             <div class="image-box">
-                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1000" alt="Lavoro del grano">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1000" alt="Tradizione Jelsi">
             </div>
         </div>
 
@@ -102,18 +107,18 @@
             <div class="text-box">
                 <h2>Cosa Facciamo</h2>
                 <p>
-                    Preserviamo le <strong>Traglie</strong>, opere d'arte effimere fatte di spighe. Organizziamo laboratori di intreccio, percorsi didattici e utilizziamo le tecnologie digitali per far sì che queste sculture dorate non svaniscano mai, portando nel futuro un rito che unisce sacro e profano.
+                    Preserviamo le <strong>Traglie</strong>, opere d'arte effimere fatte di spighe intrecciate. Organizziamo laboratori, percorsi didattici e utilizziamo le tecnologie digitali per far sì che queste sculture dorate non svaniscano mai. Portiamo nel futuro un rito che unisce sacro e profano.
                 </p>
             </div>
             <div class="image-box">
-                <img src="https://images.unsplash.com/photo-1474130044500-112f41655f01?q=80&w=1000" alt="Dettaglio intreccio">
+                <img src="https://images.unsplash.com/photo-1474130044500-112f41655f01?q=80&w=1000" alt="Arte del Grano">
             </div>
         </div>
 
     </section>
 
     <footer>
-        <p>&copy; 2024 MUFEG Jelsi - Progetto Digitale</p>
+        <p><strong>MUFEG Jelsi</strong><br>Museo di Comunità della Festa del Grano<br>© 2026 - Digital Preservation Project</p>
     </footer>
 
 </body>
