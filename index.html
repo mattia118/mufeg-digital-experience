@@ -4,72 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUFEG - Experience Digitale</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
     <style>
         :root {
             --oro-grano: #daa520;
             --marrone-scuro: #3e2723;
             --crema: #fffdf5;
+            --nero-testo: #2c1e1a;
         }
 
-        body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', sans-serif; background: var(--crema); color: var(--marrone-scuro); scroll-behavior: smooth; }
+        body, html { margin: 0; padding: 0; font-family: 'Georgia', serif; background: var(--crema); color: var(--nero-testo); scroll-behavior: smooth; }
 
         /* Hero Section */
         header {
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1542711874-972740924195?auto=format&fit=crop&q=80&w=1920'); /* Foto temporanea grano */
-            background-size: cover;
-            color: white;
-            text-align: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070');
+            background-size: cover; background-position: center;
+            color: white; text-align: center;
         }
+        header h1 { font-size: clamp(3rem, 10vw, 5rem); margin: 0; }
+        header p { font-size: 1.5rem; font-style: italic; }
 
-        header h1 { font-size: 4rem; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .btn { padding: 15px 30px; background: var(--oro-grano); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { transform: scale(1.1); background: #b8860b; }
+        /* Sezione Storytelling */
+        .story-section { padding: 80px 20px; max-width: 900px; margin: auto; line-height: 1.8; }
+        .story-item { display: flex; flex-direction: column; margin-bottom: 100px; align-items: center; text-align: center; }
+        .story-item img { width: 100%; max-width: 600px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 20px 0; }
+        .year { font-size: 3rem; font-weight: bold; color: var(--oro-grano); font-family: sans-serif; display: block; }
+        h2 { font-size: 2.5rem; color: var(--marrone-scuro); }
 
-        /* Section 3D */
-        #interactive-3d {
-            height: 80vh;
-            position: relative;
-            background: #eee;
-            border-top: 5px solid var(--oro-grano);
-        }
+        /* Canvas 3D */
+        #interactive-3d { height: 70vh; background: #e0e0e0; position: relative; border-top: 10px solid var(--oro-grano); }
+        #ui-overlay { position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.9); padding: 15px; border-radius: 8px; pointer-events: none; }
 
-        #ui-overlay {
-            position: absolute;
-            top: 20px; left: 20px;
-            background: rgba(255,255,255,0.8);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 300px;
-            pointer-events: none;
-        }
-
-        footer { padding: 50px; text-align: center; background: var(--marrone-scuro); color: white; }
+        footer { padding: 40px; text-align: center; background: var(--marrone-scuro); color: white; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>MUFEG</h1>
-        <p>Museo di Comunità della Festa del Grano - Jelsi</p>
-        <br>
-        <a href="#interactive-3d" class="btn">Esplora la Traglia 3D</a>
+        <p>L'Anima di Paglia di Jelsi</p>
     </header>
+
+    <div class="story-section">
+        
+        <div class="story-item">
+            <span class="year">1805</span>
+            <h2>Il Miracolo dopo il Terremoto</h2>
+            <p>Il 26 luglio 1805, un violento terremoto scosse il Molise. Jelsi rimase miracolosamente quasi intatta. Gli abitanti, per ringraziare Sant'Anna, iniziarono a offrire il bene più prezioso della loro terra: il grano. Nacque così la prima sfilata delle Traglie.</p>
+            <img src="https://images.unsplash.com/photo-1516483642774-724321777ba8?q=80&w=1000" alt="Storia antica">
+        </div>
+
+        <div class="story-item">
+            <span class="year">1900s</span>
+            <h2>L'Arte dell'Intreccio</h2>
+            <p>Col passare dei decenni, la semplice offerta si trasformò in arte. Le spighe non venivano solo caricate, ma intrecciate a mano per creare forme geometriche, architetture e scene di vita contadina. Ogni chicco diventava un pixel di un mosaico dorato.</p>
+            <img src="https://images.unsplash.com/photo-1474130044500-112f41655f01?q=80&w=1000" alt="Grano intrecciato">
+        </div>
+
+        <div class="story-item">
+            <span class="year">Oggi</span>
+            <h2>Il MUFEG: Un Patrimonio Digitale</h2>
+            <p>Oggi il Museo di Comunità (MUFEG) custodisce queste fragili opere. Qui la tradizione incontra l'innovazione: le Traglie vengono digitalizzate per essere conservate per l'eternità, permettendo al mondo di scoprire il segreto dell'oro di Jelsi.</p>
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000" alt="Museo moderno">
+        </div>
+
+    </div>
 
     <section id="interactive-3d">
         <div id="ui-overlay">
-            <h3>Esploratore 3D</h3>
-            <p>Traglia Tradizionale di Jelsi.<br><small>Usa il mouse per ruotare e la rotellina per zoomare.</small></p>
+            <h3>Archivio Digitale 3D</h3>
+            <p>Esplora la struttura di una Traglia tradizionale.</p>
         </div>
-        </section>
+    </section>
 
     <footer>
-        <p>&copy; 2026 - Progetto Digitale per il Comune di Jelsi</p>
+        <p>Jelsi - Festa del Grano | Sito in fase di sviluppo</p>
     </footer>
 
     <script type="importmap">
@@ -80,60 +90,45 @@
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-        // Setup base
         const container = document.getElementById('interactive-3d');
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0xf0f0f0);
+        scene.background = new THREE.Color(0xf4f4f4);
 
         const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
         container.appendChild(renderer.domElement);
 
-        // Controlli per muovere la visuale col mouse
         const controls = new OrbitControls(camera, renderer.domElement);
-        
-        // Luci
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-        scene.add(ambientLight);
-        const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-        dirLight.position.set(5, 10, 7);
-        scene.add(dirLight);
+        controls.enableDamping = true;
 
-        // Creiamo una struttura che ricorda una slitta (Traglia) semplificata
-        const group = new THREE.Group();
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(5, 5, 5);
+        scene.add(light);
+        scene.add(new THREE.AmbientLight(0xffffff, 0.5));
 
-        // Base Slitta
-        const baseGeo = new THREE.BoxGeometry(4, 0.2, 2);
-        const woodMat = new THREE.MeshStandardMaterial({ color: 0x8b4513 });
-        const base = new THREE.Mesh(baseGeo, woodMat);
-        group.add(base);
+        // Rappresentazione simbolica Traglia
+        const base = new THREE.Mesh(new THREE.BoxGeometry(4, 0.3, 2), new THREE.MeshStandardMaterial({ color: 0x5d4037 }));
+        scene.add(base);
 
-        // Carico di Grano (una piramide dorata sopra)
-        const grainGeo = new THREE.ConeGeometry(1.5, 3, 4);
-        const grainMat = new THREE.MeshStandardMaterial({ color: 0xdaa520 });
-        const grain = new THREE.Mesh(grainGeo, grainMat);
+        const grain = new THREE.Mesh(new THREE.ConeGeometry(1.2, 3, 32), new THREE.MeshStandardMaterial({ color: 0xdaa520 }));
         grain.position.y = 1.6;
-        group.add(grain);
+        scene.add(grain);
 
-        scene.add(group);
-        camera.position.set(5, 5, 5);
-        controls.update();
+        camera.position.set(6, 4, 6);
 
         function animate() {
             requestAnimationFrame(animate);
-            group.rotation.y += 0.005; // Rotazione lenta automatica
+            controls.update();
             renderer.render(scene, camera);
         }
-        
-        // Gestione ridimensionamento finestra
+        animate();
+
         window.addEventListener('resize', () => {
             camera.aspect = container.clientWidth / container.clientHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(container.clientWidth, container.clientHeight);
         });
-
-        animate();
     </script>
 </body>
 </html>
